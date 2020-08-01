@@ -1,0 +1,19 @@
+{
+  "name": "readme_generator",
+  "version": "1.0.0",
+  "description": "Generate professional readme files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spencer-alan/nodejs-readme-generator.git"
+  },
+  "author": "Spencer Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spencer-alan/nodejs-readme-generator/issues"
+  },
+  "homepage": "https://github.com/spencer-alan/nodejs-readme-generator#readme"
+}
