@@ -12,6 +12,10 @@
   },
   "author": "Spencer Smith",
   "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "inquirer": "^6.3.1"
+  },
   "bugs": {
     "url": "https://github.com/spencer-alan/nodejs-readme-generator/issues"
   },
