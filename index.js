@@ -27,7 +27,7 @@ const questions = [
   {
     type: "input",
     message: "What is the description of the project?",
-    name: "description",
+    name: "discription",
   },
   {
     type: "input",
@@ -74,13 +74,33 @@ const questions = [
 ];
 
 function writeToFile(fileName, data) {
-
+  
 };
 
 function init() {
   inquirer.prompt(questions).then((response) => {
-    console.log("\nRepo Answers:");
-    console.log(JSON.stringify(response, null, " "));
+    // console.log("\nRepo Answers:");
+    // console.log(JSON.stringify(response, null, " "));
+    let username = response.name;
+    let title = response.title;
+    let intro = `# Introduction \n ${title} made by ${username}. \n\n`;
+    let discription = `## Discription \n ${response.discription}. \n\n`;
+    let install = `## Install \n ${response.install}. \n\n`;
+    let usage = `## Usage \n ${response.usage}. \n\n`;
+    let contributing = `## Contributing \n ${response.contributing}. \n\n`;
+    let license = `### License \n This work is licensed with ${response.license}.`;
+    let fileArray = [discription, install, usage, contributing, license];
+
+    fs.writeFile("README.md", intro, (error) => {
+      if (error) throw error;
+      console.log("README created.");
+    });
+    for (let i = 0; i < fileArray.length; i++) {
+      fs.appendFile("README.md", fileArray[i], (error) => {
+        if(error) throw error;
+        console.log("Success");
+      });
+    };
   });
 };
 
